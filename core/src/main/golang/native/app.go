@@ -9,7 +9,7 @@ import (
 
 	"cfa/native/app"
 
-	"github.com/Dreamacro/clash/log"
+	"github.com/Dreamacro/foss/log"
 )
 
 func openRemoteContent(url string) (int, error) {

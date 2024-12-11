@@ -1,8 +1,8 @@
 package tunnel
 
 import (
-	C "github.com/Dreamacro/clash/constant"
-	"github.com/Dreamacro/clash/tunnel/statistic"
+	C "github.com/Dreamacro/foss/constant"
+	"github.com/Dreamacro/foss/tunnel/statistic"
 )
 
 func CloseAllConnections() {

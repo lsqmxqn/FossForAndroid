@@ -5,10 +5,10 @@ import (
 	"net"
 	"strings"
 
-	"github.com/Dreamacro/clash/component/dialer"
-	C "github.com/Dreamacro/clash/constant"
-	CTX "github.com/Dreamacro/clash/context"
-	"github.com/Dreamacro/clash/tunnel"
+	"github.com/Dreamacro/foss/component/dialer"
+	C "github.com/Dreamacro/foss/constant"
+	CTX "github.com/Dreamacro/foss/context"
+	"github.com/Dreamacro/foss/tunnel"
 )
 
 func init() {

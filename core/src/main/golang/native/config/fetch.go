@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"cfa/native/app"
-	"github.com/Dreamacro/clash/component/dialer"
+	"github.com/Dreamacro/foss/component/dialer"
 )
 
 type Status struct {
@@ -39,7 +39,7 @@ func openUrl(url string) (io.ReadCloser, error) {
 		return nil, err
 	}
 
-	request.Header.Set("User-Agent", "ClashForAndroid/"+app.VersionName())
+	request.Header.Set("User-Agent", "FossForAndroid/"+app.VersionName())
 
 	response, err := client.Do(request)
 	if err != nil {

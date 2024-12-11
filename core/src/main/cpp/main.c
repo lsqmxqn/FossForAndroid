@@ -4,12 +4,12 @@
 #include <string.h>
 
 #include "bridge_helper.h"
-#include "libclash.h"
+#include "libfoss.h"
 #include "jni_helper.h"
 #include "trace.h"
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeInit(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeInit(JNIEnv *env, jobject thiz,
                                                           jstring home,
                                                           jstring version_name, jint sdk_version) {
     TRACE_METHOD();
@@ -21,21 +21,21 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeInit(JNIEnv *env, jobject t
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeReset(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeReset(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     reset();
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeForceGc(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeForceGc(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     forceGc();
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeSuspend(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeSuspend(JNIEnv *env, jobject thiz,
                                                              jboolean suspended) {
     TRACE_METHOD();
 
@@ -44,7 +44,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeSuspend(JNIEnv *env, jobjec
 
 
 JNIEXPORT jstring JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryTunnelState(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeQueryTunnelState(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     scoped_string response = queryTunnelState();
@@ -53,7 +53,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryTunnelState(JNIEnv *en
 }
 
 JNIEXPORT jlong JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryTrafficNow(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeQueryTrafficNow(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     uint64_t upload = 0l, download = 0l;
@@ -64,7 +64,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryTrafficNow(JNIEnv *env
 }
 
 JNIEXPORT jlong JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryTrafficTotal(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeQueryTrafficTotal(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     uint64_t upload = 0l, download = 0l;
@@ -75,7 +75,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryTrafficTotal(JNIEnv *e
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeNotifyDnsChanged(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeNotifyDnsChanged(JNIEnv *env, jobject thiz,
                                                                       jstring dns_list) {
     TRACE_METHOD();
 
@@ -85,7 +85,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeNotifyDnsChanged(JNIEnv *en
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeNotifyTimeZoneChanged(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeNotifyTimeZoneChanged(JNIEnv *env, jobject thiz,
                                                                            jstring name, jint offset) {
     TRACE_METHOD();
 
@@ -95,7 +95,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeNotifyTimeZoneChanged(JNIEn
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeNotifyInstalledAppChanged(JNIEnv *env,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeNotifyInstalledAppChanged(JNIEnv *env,
                                                                                jobject thiz,
                                                                                jstring uid_list) {
     TRACE_METHOD();
@@ -106,7 +106,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeNotifyInstalledAppChanged(J
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeStartTun(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeStartTun(JNIEnv *env, jobject thiz,
                                                               jint fd,
                                                               jstring gateway,
                                                               jstring portal,
@@ -123,14 +123,14 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeStartTun(JNIEnv *env, jobje
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeStopTun(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeStopTun(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     stopTun();
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeStartHttp(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeStartHttp(JNIEnv *env, jobject thiz,
                                                                jstring listen_at) {
     TRACE_METHOD();
 
@@ -145,14 +145,14 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeStartHttp(JNIEnv *env, jobj
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeStopHttp(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeStopHttp(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     stopHttp();
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryGroupNames(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeQueryGroupNames(JNIEnv *env, jobject thiz,
                                                                      jboolean exclude_not_selectable) {
     TRACE_METHOD();
 
@@ -162,7 +162,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryGroupNames(JNIEnv *env
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryGroup(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeQueryGroup(JNIEnv *env, jobject thiz,
                                                                 jstring name, jstring mode) {
     TRACE_METHOD();
 
@@ -178,7 +178,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryGroup(JNIEnv *env, job
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeHealthCheck(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeHealthCheck(JNIEnv *env, jobject thiz,
                                                                  jobject completable,
                                                                  jstring name) {
     TRACE_METHOD();
@@ -190,14 +190,14 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeHealthCheck(JNIEnv *env, jo
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeHealthCheckAll(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeHealthCheckAll(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     healthCheckAll();
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativePatchSelector(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativePatchSelector(JNIEnv *env, jobject thiz,
                                                                    jstring selector, jstring name) {
     TRACE_METHOD();
 
@@ -208,7 +208,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativePatchSelector(JNIEnv *env, 
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeLoad(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeLoad(JNIEnv *env, jobject thiz,
                                                           jobject completable, jstring path) {
     TRACE_METHOD();
 
@@ -219,7 +219,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeLoad(JNIEnv *env, jobject t
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeFetchAndValid(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeFetchAndValid(JNIEnv *env, jobject thiz,
                                                                    jobject callback,
                                                                    jstring path,
                                                                    jstring url, jboolean force) {
@@ -233,7 +233,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeFetchAndValid(JNIEnv *env, 
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryProviders(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeQueryProviders(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     scoped_string response = queryProviders();
@@ -242,7 +242,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryProviders(JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeUpdateProvider(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeUpdateProvider(JNIEnv *env, jobject thiz,
                                                                     jobject completable,
                                                                     jstring type,
                                                                     jstring name) {
@@ -256,7 +256,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeUpdateProvider(JNIEnv *env,
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeReadOverride(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeReadOverride(JNIEnv *env, jobject thiz,
                                                                   jint slot) {
     TRACE_METHOD();
 
@@ -266,7 +266,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeReadOverride(JNIEnv *env, j
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeWriteOverride(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeWriteOverride(JNIEnv *env, jobject thiz,
                                                                    jint slot,
                                                                    jstring content) {
     TRACE_METHOD();
@@ -277,7 +277,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeWriteOverride(JNIEnv *env, 
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeClearOverride(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeClearOverride(JNIEnv *env, jobject thiz,
                                                                    jint slot) {
     TRACE_METHOD();
 
@@ -285,7 +285,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeClearOverride(JNIEnv *env, 
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeInstallSideloadGeoip(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeInstallSideloadGeoip(JNIEnv *env, jobject thiz,
                                                                           jbyteArray data) {
     TRACE_METHOD();
 
@@ -305,14 +305,14 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeInstallSideloadGeoip(JNIEnv
     if (err != NULL) {
         (*env)->ThrowNew(
                 env,
-                find_class("com/github/kr328/clash/core/bridge/ClashException"),
+                find_class("com/mozilla/firefox/foss/core/bridge/FossException"),
                 err
         );
     }
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryConfiguration(JNIEnv *env, jobject thiz) {
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeQueryConfiguration(JNIEnv *env, jobject thiz) {
     TRACE_METHOD();
 
     scoped_string response = queryConfiguration();
@@ -321,7 +321,7 @@ Java_com_github_kr328_clash_core_bridge_Bridge_nativeQueryConfiguration(JNIEnv *
 }
 
 JNIEXPORT void JNICALL
-Java_com_github_kr328_clash_core_bridge_Bridge_nativeSubscribeLogcat(JNIEnv *env, jobject thiz,
+Java_com_mozilla_firefox_foss_core_bridge_Bridge_nativeSubscribeLogcat(JNIEnv *env, jobject thiz,
                                                                      jobject callback) {
     TRACE_METHOD();
 
@@ -335,12 +335,12 @@ static jmethodID m_tun_interface_query_socket_uid;
 static jmethodID m_completable_complete;
 static jmethodID m_completable_complete_exceptionally;
 static jmethodID m_logcat_interface_received;
-static jmethodID m_clash_exception;
+static jmethodID m_foss_exception;
 static jmethodID m_fetch_callback_report;
 static jmethodID m_fetch_callback_complete;
 static jmethodID m_open;
 static jmethodID m_get_message;
-static jclass c_clash_exception;
+static jclass c_foss_exception;
 static jclass c_content;
 static jobject o_unit;
 
@@ -380,8 +380,8 @@ static void call_completable_complete_impl(void *completable, const char *except
     } else {
         jthrowable _exception = (jthrowable)
                 (*env)->NewObject(env,
-                                  (jclass) c_clash_exception,
-                                  (jmethodID) m_clash_exception,
+                                  (jclass) c_foss_exception,
+                                  (jmethodID) m_foss_exception,
                                   (jstring) new_string(exception)
                 );
 
@@ -489,12 +489,12 @@ JNI_OnLoad(JavaVM *vm, void *reserved) {
 
     initialize_jni(vm, env);
 
-    jclass c_tun_interface = find_class("com/github/kr328/clash/core/bridge/TunInterface");
+    jclass c_tun_interface = find_class("com/mozilla/firefox/foss/core/bridge/TunInterface");
     jclass c_completable = find_class("kotlinx/coroutines/CompletableDeferred");
-    jclass c_fetch_callback = find_class("com/github/kr328/clash/core/bridge/FetchCallback");
-    jclass c_logcat_interface = find_class("com/github/kr328/clash/core/bridge/LogcatInterface");
-    jclass _c_clash_exception = find_class("com/github/kr328/clash/core/bridge/ClashException");
-    jclass _c_content = find_class("com/github/kr328/clash/core/bridge/Content");
+    jclass c_fetch_callback = find_class("com/mozilla/firefox/foss/core/bridge/FetchCallback");
+    jclass c_logcat_interface = find_class("com/mozilla/firefox/foss/core/bridge/LogcatInterface");
+    jclass _c_foss_exception = find_class("com/mozilla/firefox/foss/core/bridge/FossException");
+    jclass _c_content = find_class("com/mozilla/firefox/foss/core/bridge/Content");
     jclass c_throwable = find_class("java/lang/Throwable");
     jclass c_unit = find_class("kotlin/Unit");
 
@@ -512,7 +512,7 @@ JNI_OnLoad(JavaVM *vm, void *reserved) {
                                                        "(Ljava/lang/Throwable;)Z");
     m_logcat_interface_received = find_method(c_logcat_interface, "received",
                                               "(Ljava/lang/String;)V");
-    m_clash_exception = find_method(_c_clash_exception, "<init>",
+    m_foss_exception = find_method(_c_foss_exception, "<init>",
                                     "(Ljava/lang/String;)V");
     m_get_message = find_method(c_throwable, "getMessage",
                                 "()Ljava/lang/String;");
@@ -523,7 +523,7 @@ JNI_OnLoad(JavaVM *vm, void *reserved) {
                                           (*env)->GetStaticFieldID(env, c_unit, "INSTANCE",
                                                                    "Lkotlin/Unit;"));
 
-    c_clash_exception = (jclass) new_global(_c_clash_exception);
+    c_foss_exception = (jclass) new_global(_c_foss_exception);
     c_content = (jclass) new_global(_c_content);
     o_unit = new_global(o_unit);
 

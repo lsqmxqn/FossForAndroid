@@ -6,7 +6,7 @@ require cfa v0.0.0
 
 require (
 	cfa/blob v0.0.0 // indirect
-	github.com/Dreamacro/clash v1.7.1 // indirect
+	github.com/Dreamacro/foss v1.7.1 // indirect
 	github.com/Kr328/tun2socket v0.0.0-20220414050025-d07c78d06d34 // indirect
 	github.com/avast/apkparser v0.0.0-20210223100516-186f320f9bfc // indirect
 	github.com/avast/apkverifier v0.0.0-20210916093748-2146ff7c4b7f // indirect
@@ -54,6 +54,6 @@ require (
 
 replace cfa => ../../main/golang
 
-replace github.com/Dreamacro/clash => ./clash
+replace github.com/Dreamacro/foss => ./foss
 
 replace cfa/blob => ../../../build/intermediates/golang_blob

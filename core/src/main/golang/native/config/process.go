@@ -9,11 +9,11 @@ import (
 	"github.com/dlclark/regexp2"
 
 	"cfa/native/common"
-	C "github.com/Dreamacro/clash/constant"
-	"github.com/Dreamacro/clash/log"
+	C "github.com/Dreamacro/foss/constant"
+	"github.com/Dreamacro/foss/log"
 
-	"github.com/Dreamacro/clash/config"
-	"github.com/Dreamacro/clash/dns"
+	"github.com/Dreamacro/foss/config"
+	"github.com/Dreamacro/foss/dns"
 )
 
 var processors = []processor{
@@ -66,10 +66,10 @@ func patchDns(cfg *config.RawConfig, _ string) error {
 			FakeIPFilter:      defaultFakeIPFilter,
 		}
 
-		cfg.ClashForAndroid.AppendSystemDNS = true
+		cfg.FossForAndroid.AppendSystemDNS = true
 	}
 
-	if cfg.ClashForAndroid.AppendSystemDNS {
+	if cfg.FossForAndroid.AppendSystemDNS {
 		cfg.DNS.NameServer = append(cfg.DNS.NameServer, "dhcp://"+dns.SystemDNSPlaceholder)
 	}
 
@@ -91,7 +91,7 @@ func validConfig(cfg *config.RawConfig, _ string) error {
 		return errors.New("profile does not contain `proxies` or `proxy-providers`")
 	}
 
-	if _, err := regexp2.Compile(cfg.ClashForAndroid.UiSubtitlePattern, 0); err != nil {
+	if _, err := regexp2.Compile(cfg.FossForAndroid.UiSubtitlePattern, 0); err != nil {
 		return fmt.Errorf("compile ui-subtitle-pattern: %s", err.Error())
 	}
 

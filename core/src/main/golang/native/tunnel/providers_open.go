@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"time"
 
-	P "github.com/Dreamacro/clash/adapter/provider"
-	"github.com/Dreamacro/clash/constant/provider"
-	"github.com/Dreamacro/clash/tunnel"
+	P "github.com/Dreamacro/foss/adapter/provider"
+	"github.com/Dreamacro/foss/constant/provider"
+	"github.com/Dreamacro/foss/tunnel"
 )
 
 type Provider struct {

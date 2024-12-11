@@ -3,7 +3,7 @@ package app
 import (
 	"strings"
 
-	"github.com/Dreamacro/clash/dns"
+	"github.com/Dreamacro/foss/dns"
 )
 
 func NotifyDnsChanged(dnsList string) {

@@ -9,10 +9,10 @@ import (
 	"gopkg.in/yaml.v2"
 
 	"cfa/native/app"
-	"github.com/Dreamacro/clash/log"
+	"github.com/Dreamacro/foss/log"
 
-	"github.com/Dreamacro/clash/config"
-	"github.com/Dreamacro/clash/hub/executor"
+	"github.com/Dreamacro/foss/config"
+	"github.com/Dreamacro/foss/hub/executor"
 )
 
 func logDns(cfg *config.RawConfig) {
@@ -78,7 +78,7 @@ func Load(path string) error {
 
 	executor.ApplyConfig(cfg, true)
 
-	app.ApplySubtitlePattern(rawCfg.ClashForAndroid.UiSubtitlePattern)
+	app.ApplySubtitlePattern(rawCfg.FossForAndroid.UiSubtitlePattern)
 
 	runtime.GC()
 

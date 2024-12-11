@@ -3,7 +3,7 @@ package tun
 import (
 	"net"
 
-	"github.com/Dreamacro/clash/dns"
+	"github.com/Dreamacro/foss/dns"
 
 	D "github.com/miekg/dns"
 )

@@ -5,7 +5,7 @@ import (
 
 	"github.com/oschwald/geoip2-golang"
 
-	"github.com/Dreamacro/clash/component/mmdb"
+	"github.com/Dreamacro/foss/component/mmdb"
 )
 
 func InstallSideloadGeoip(block []byte) error {

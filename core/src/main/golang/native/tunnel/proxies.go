@@ -6,13 +6,13 @@ import (
 
 	"github.com/dlclark/regexp2"
 
-	"github.com/Dreamacro/clash/adapter"
+	"github.com/Dreamacro/foss/adapter"
 
-	"github.com/Dreamacro/clash/adapter/outboundgroup"
-	C "github.com/Dreamacro/clash/constant"
-	"github.com/Dreamacro/clash/constant/provider"
-	"github.com/Dreamacro/clash/log"
-	"github.com/Dreamacro/clash/tunnel"
+	"github.com/Dreamacro/foss/adapter/outboundgroup"
+	C "github.com/Dreamacro/foss/constant"
+	"github.com/Dreamacro/foss/constant/provider"
+	"github.com/Dreamacro/foss/log"
+	"github.com/Dreamacro/foss/tunnel"
 )
 
 type SortMode int

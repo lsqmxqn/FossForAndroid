@@ -3,11 +3,11 @@ package tunnel
 import (
 	"sync"
 
-	"github.com/Dreamacro/clash/adapter"
-	"github.com/Dreamacro/clash/adapter/outboundgroup"
-	"github.com/Dreamacro/clash/constant/provider"
-	"github.com/Dreamacro/clash/log"
-	"github.com/Dreamacro/clash/tunnel"
+	"github.com/Dreamacro/foss/adapter"
+	"github.com/Dreamacro/foss/adapter/outboundgroup"
+	"github.com/Dreamacro/foss/constant/provider"
+	"github.com/Dreamacro/foss/log"
+	"github.com/Dreamacro/foss/tunnel"
 )
 
 func HealthCheck(name string) {
