@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.github.kr328.clash">
+    package="com.mozilla.firefox.foss">
 
     <uses-feature
         android:name="android.software.leanback"
@@ -67,7 +67,7 @@
 
                 <data
                     android:host="install-config"
-                    android:scheme="clash" />
+                    android:scheme="foss" />
             </intent-filter>
         </activity>
         <activity
@@ -155,7 +155,7 @@
         <service
             android:name=".LogcatService"
             android:exported="false"
-            android:label="@string/clash_logcat" />
+            android:label="@string/foss_logcat" />
         <service
             android:name=".TileService"
             android:exported="true"

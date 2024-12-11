@@ -14,5 +14,5 @@
         path="pending" />
     <include
         domain="file"
-        path="clash/override.json" />
+        path="foss/override.json" />
 </full-backup-content>
