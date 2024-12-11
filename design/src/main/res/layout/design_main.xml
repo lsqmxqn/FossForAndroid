@@ -4,9 +4,9 @@
     <data>
         <variable
             name="self"
-            type="com.github.kr328.clash.design.MainDesign" />
+            type="com.mozilla.firefox.foss.design.MainDesign" />
         <variable
-            name="clashRunning"
+            name="fossRunning"
             type="boolean" />
         <variable
             name="forwarded"
@@ -18,17 +18,17 @@
             name="profileName"
             type="String" />
         <variable
-            name="colorClashStarted"
+            name="colorFossStarted"
             type="int" />
         <variable
-            name="colorClashStopped"
+            name="colorFossStopped"
             type="int" />
         <variable
             name="hasProviders"
             type="boolean" />
 
         <import type="android.view.View" />
-        <import type="com.github.kr328.clash.design.MainDesign.Request" />
+        <import type="com.mozilla.firefox.foss.design.MainDesign.Request" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -67,7 +67,7 @@
                             android:layout_width="@dimen/main_logo_size"
                             android:layout_height="@dimen/main_logo_size"
                             android:layout_gravity="center"
-                            android:background="@drawable/ic_clash"
+                            android:background="@drawable/ic_foss"
                             android:backgroundTint="?attr/colorLogo" />
                     </FrameLayout>
 
@@ -78,28 +78,28 @@
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
                 </LinearLayout>
 
-                <com.github.kr328.clash.design.view.LargeActionCard
+                <com.mozilla.firefox.foss.design.view.LargeActionCard
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/main_card_margin_vertical"
                     android:onClick="@{() -> self.request(Request.ToggleStatus)}"
                     android:theme="@style/AppThemeDark"
-                    app:cardBackgroundColor="@{clashRunning ? colorClashStarted : colorClashStopped}"
-                    app:icon="@{clashRunning ? @drawable/ic_outline_check_circle : @drawable/ic_outline_not_interested}"
-                    app:subtext="@{clashRunning ? @string/format_traffic_forwarded(forwarded) : @string/tap_to_start}"
-                    app:text="@{clashRunning ? @string/running : @string/stopped}" />
+                    app:cardBackgroundColor="@{fossRunning ? colorFossStarted : colorFossStopped}"
+                    app:icon="@{fossRunning ? @drawable/ic_outline_check_circle : @drawable/ic_outline_not_interested}"
+                    app:subtext="@{fossRunning ? @string/format_traffic_forwarded(forwarded) : @string/tap_to_start}"
+                    app:text="@{fossRunning ? @string/running : @string/stopped}" />
 
-                <com.github.kr328.clash.design.view.LargeActionCard
+                <com.mozilla.firefox.foss.design.view.LargeActionCard
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/main_card_margin_vertical"
                     android:onClick="@{() -> self.request(Request.OpenProxy)}"
-                    android:visibility="@{clashRunning ? View.VISIBLE : View.GONE}"
+                    android:visibility="@{fossRunning ? View.VISIBLE : View.GONE}"
                     app:icon="@drawable/ic_baseline_apps"
                     app:subtext="@{mode}"
                     app:text="@string/proxy" />
 
-                <com.github.kr328.clash.design.view.LargeActionCard
+                <com.mozilla.firefox.foss.design.view.LargeActionCard
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/main_card_margin_vertical"
@@ -108,16 +108,16 @@
                     app:subtext="@{profileName != null ? @string/format_profile_activated(profileName) : @string/not_selected}"
                     app:text="@string/profile" />
 
-                <com.github.kr328.clash.design.view.LargeActionLabel
+                <com.mozilla.firefox.foss.design.view.LargeActionLabel
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginVertical="@dimen/main_label_margin_vertical"
                     android:onClick="@{() -> self.request(Request.OpenProviders)}"
-                    android:visibility="@{clashRunning &amp;&amp; hasProviders ? View.VISIBLE : View.GONE}"
+                    android:visibility="@{fossRunning &amp;&amp; hasProviders ? View.VISIBLE : View.GONE}"
                     app:icon="@drawable/ic_baseline_swap_vertical_circle"
                     app:text="@string/providers" />
 
-                <com.github.kr328.clash.design.view.LargeActionLabel
+                <com.mozilla.firefox.foss.design.view.LargeActionLabel
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/main_label_margin_vertical"
@@ -125,7 +125,7 @@
                     app:icon="@drawable/ic_baseline_assignment"
                     app:text="@string/logs" />
 
-                <com.github.kr328.clash.design.view.LargeActionLabel
+                <com.mozilla.firefox.foss.design.view.LargeActionLabel
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/main_label_margin_vertical"
@@ -133,7 +133,7 @@
                     app:icon="@drawable/ic_baseline_settings"
                     app:text="@string/settings" />
 
-                <com.github.kr328.clash.design.view.LargeActionLabel
+                <com.mozilla.firefox.foss.design.view.LargeActionLabel
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/main_label_margin_vertical"
@@ -141,7 +141,7 @@
                     app:icon="@drawable/ic_baseline_help_center"
                     app:text="@string/help" />
 
-                <com.github.kr328.clash.design.view.LargeActionLabel
+                <com.mozilla.firefox.foss.design.view.LargeActionLabel
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/main_label_margin_vertical"
