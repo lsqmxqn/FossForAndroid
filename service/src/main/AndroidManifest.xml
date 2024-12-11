@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.github.kr328.clash.service">
+    package="com.mozilla.firefox.foss.service">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -12,14 +12,14 @@
 
     <application>
         <service
-            android:name=".ClashService"
+            android:name=".FossService"
             android:exported="false"
-            android:label="@string/clash_for_android"
+            android:label="@string/foss_for_android"
             android:process=":background" />
         <service
             android:name=".TunService"
             android:exported="false"
-            android:label="@string/clash_for_android"
+            android:label="@string/foss_for_android"
             android:permission="android.permission.BIND_VPN_SERVICE"
             android:process=":background">
             <intent-filter>
